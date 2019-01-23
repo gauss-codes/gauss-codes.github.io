@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Print Test Page</title>
+        <script>
+            function printDiv() {
+                window.frames["print_frame"].window.focus();
+                window.frames["print_frame"].window.print();
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>This is a test page for printing</h1>
+        <div id="print" style="display:none;">
+            <div id="main">
+                <script type="text/javascript">
+                    var row;
+                    var col;
+                    for(row = 0; row < 14; row++) {
+                        for(col = 0; col < 4; col++) {
+                            document.write('\
+                                <div>\
+                                    <p>Kateg&oacute;ria: whisky, Krajina: Franc&uacute;zsko</p>\
+                                    <p>Objem: 0,7L; Obsah alkoholu: viï. etiketa</p>\
+                                    <p>Distrib&uacute;tor: Slainte s.r.o.</p>\
+                                    <p>Tokaj&iacute;cka 93/12, 82103 Bratislava, Slovensko</p>\
+                                    <p><a href="http://www.slainte.sk,">www.slainte.sk,</a> <a href="mailto:info@slainte.sk">info@slainte.sk</a></p>\
+                                    </div>\
+                            ');
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <a href="javascript:printDiv()">Print</a><br>
+        <iframe name="print_frame" width="100%" height="500" frameborder="0" src="about:blank"></iframe>
+        <script type="text/javascript">
+            printDivCSS = new String ('<link href="print.css" rel="stylesheet" type="text/css">')
+            window.frames["print_frame"].document.body.innerHTML = printDivCSS + document.getElementById('print').innerHTML;
+        </script>
+    </body>
+</html>
