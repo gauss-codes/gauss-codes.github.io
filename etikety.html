@@ -6,6 +6,31 @@
                 window.frames["print_frame"].window.focus();
                 window.frames["print_frame"].window.print();
             }
+            
+            function testDiv() {
+                let rows = 14;
+                let cols = 4;
+                let form = document.forms["data"];
+                let category = form["category"].value;
+                let country = form["country"].value;
+                let volume = form["volume"].value;
+                let abv = form["abv"].value;
+                let stamp = '<div>\
+                             <p>Kateg&oacute;ria: ' + category + ', Krajina: ' + country + '</p>\
+                             <p>Objem: ' + volume + '; Obsah alkoholu: ' + abv + '</p>\
+                             <p>Distrib&uacute;tor: Slainte s.r.o.</p>\
+                             <p>Tokaj&iacute;cka 93/12, 82103 Bratislava, Slovensko</p>\
+                             <p><a href="http://www.slainte.sk,">www.slainte.sk,</a> <a href="mailto:info@slainte.sk">info@slainte.sk</a></p>\
+                             </div>\
+                            ';
+                
+                printDivCSS = new String ('<link href="print.css" rel="stylesheet" type="text/css">')
+                window.frames["print_frame"].document.body.innerHTML = printDivCSS
+                                                                     + '<div id="main">'
+                                                                     + stamp.repeat(cols * rows)
+                                                                     + '</div>'
+                                                                     ;
+            }
         </script>
     </head>
 
@@ -14,29 +39,18 @@
         <div id="print" style="display:none;">
             <div id="main">
                 <script type="text/javascript">
-                    var row;
-                    var col;
-                    for(row = 0; row < 14; row++) {
-                        for(col = 0; col < 4; col++) {
-                            document.write('\
-                                <div>\
-                                    <p>Kateg&oacute;ria: whisky, Krajina: Franc&uacute;zsko</p>\
-                                    <p>Objem: 0,7L; Obsah alkoholu: viï. etiketa</p>\
-                                    <p>Distrib&uacute;tor: Slainte s.r.o.</p>\
-                                    <p>Tokaj&iacute;cka 93/12, 82103 Bratislava, Slovensko</p>\
-                                    <p><a href="http://www.slainte.sk,">www.slainte.sk,</a> <a href="mailto:info@slainte.sk">info@slainte.sk</a></p>\
-                                    </div>\
-                            ');
-                        }
-                    }
                 </script>
             </div>
         </div>
-        <a href="javascript:printDiv()">Print</a><br>
+        <form name="data" action="javascript:testDiv()">
+            <p>Kategória: <input type="text" name="category" value="pálenka"></p>
+            <p>Krajina: <input type="text" name="country" value="Slovensko"></p>
+            <p>Objem: <input type="text" name="volume" value="0,7L"></p>
+            <p>Obsah alkoholu: <input type="text" name="abv" value="45%"></p>
+            <p><input type="submit" value="Test"> <a href="javascript:printDiv()">Tlač</a></p>
+        </form>
         <iframe name="print_frame" width="100%" height="500" frameborder="0" src="about:blank"></iframe>
         <script type="text/javascript">
-            printDivCSS = new String ('<link href="print.css" rel="stylesheet" type="text/css">')
-            window.frames["print_frame"].document.body.innerHTML = printDivCSS + document.getElementById('print').innerHTML;
         </script>
     </body>
 </html>
