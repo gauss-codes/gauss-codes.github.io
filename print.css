@@ -1,0 +1,35 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+#main {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 210mm;
+    height: 297mm;
+}
+#main div {
+    margin: 0mm;
+    padding: 1mm;
+    padding-left: 4mm;
+    border: 0px;
+    width: 47.5mm;
+    height: 19.2mm;
+    float: left;
+    text-align: center;
+}
+#main div p {
+    color: black;
+    margin: 0mm;
+    padding: 0mm;
+    border: 0px;
+    font-size: 2mm;
+    line-height: 3.5mm;
+    display: inline-block;
+}
+#main div p a {
+    text-decoration: none;
+    color: black;
+}
