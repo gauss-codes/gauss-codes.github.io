@@ -12,11 +12,11 @@ body {
 }
 #main div {
     margin: 0mm;
-    padding: 1mm;
-    padding-left: 4mm;
+    padding: 0.5mm;
+    padding-left: 4.5mm;
     border: 0px;
     width: 47.5mm;
-    height: 19.2mm;
+    height: 20.3mm;
     float: left;
     text-align: center;
 }
@@ -27,7 +27,7 @@ body {
     border: 0px;
     font-size: 2mm;
     line-height: 3.5mm;
-    display: inline-block;
+    display: block;
 }
 #main div p a {
     text-decoration: none;

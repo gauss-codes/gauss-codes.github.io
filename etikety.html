@@ -15,9 +15,11 @@
                 let country = form["country"].value;
                 let volume = form["volume"].value;
                 let abv = form["abv"].value;
+                let contents = form["contents"].value;
                 let stamp = '<div>\
                              <p>Kateg&oacute;ria: ' + category + ', Krajina: ' + country + '</p>\
                              <p>Objem: ' + volume + '; Obsah alkoholu: ' + abv + '</p>\
+                             <p>Zlo&#382;enie: ' + contents + '</p>\
                              <p>Distrib&uacute;tor: Slainte s.r.o.</p>\
                              <p>Tokaj&iacute;cka 93/12, 82103 Bratislava, Slovensko</p>\
                              <p><a href="http://www.slainte.sk,">www.slainte.sk,</a> <a href="mailto:info@slainte.sk">info@slainte.sk</a></p>\
@@ -47,9 +49,10 @@
             <p>Krajina: <input type="text" name="country" value="Slovensko"></p>
             <p>Objem: <input type="text" name="volume" value="0,7L"></p>
             <p>Obsah alkoholu: <input type="text" name="abv" value="45%"></p>
+            <p>Zloženie: <input type="text" name="contents" value="voda"></p>
             <p><input type="submit" value="Test"> <a href="javascript:printDiv()">Tlač</a></p>
         </form>
-        <iframe name="print_frame" width="100%" height="500" frameborder="0" src="about:blank"></iframe>
+        <iframe name="print_frame" width="100%" height="494" frameborder="0" src="about:blank"></iframe>
         <script type="text/javascript">
         </script>
     </body>
